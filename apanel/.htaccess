@@ -1,0 +1,163 @@
+RewriteOptions inherit
+# For security reasons, Option followsymlinks cannot be overridden.
+#Options +FollowSymLinks
+Options +SymLinksIfOwnerMatch
+RewriteEngine on
+
+RewriteRule ^404/?$ 404.php [NC,L]
+
+RewriteRule ^apanel/?$ apanel/index.php [NC,L]
+RewriteRule ^index/?$ index.php [NC,L]
+
+RewriteRule ^process-login/?$ process_login.php [NC,L]
+RewriteRule ^logout/?$ logout.php [NC,L]
+
+RewriteRule ^forgot-password/?$ forgot_password.php [NC,L]
+RewriteRule ^process-forget-pass/?$ process_forget_password.php [NC,L]
+
+RewriteRule ^activate-account/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ activate_account.php?vid=$1&activation_code=$2 [NC,L]
+
+RewriteRule ^set-new-password/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ set_new_password.php?id=$1&slug=$2 [NC,L]
+RewriteRule ^process-set-new-password/?$ process_set_new_password.php [NC,L]
+
+RewriteRule ^dashboard/?$ dashboard.php [NC,L]
+RewriteRule ^notification/?$ notification.php [NC,L]
+RewriteRule ^my-account/?$ my_account.php [NC,L]
+
+## Client ##
+RewriteRule ^manage-client/?$ manage_client.php [NC,L]
+RewriteRule ^add-client/([A-Za-z0-9-_]+)/?$ add_client.php?mode=$1 [NC,L]
+RewriteRule ^add-client/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_client.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-client/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_client.php?mode=$1&id=$2 [NC,L]
+
+## Url ##
+RewriteRule ^manage-url/?$ manage_url.php [NC,L]
+RewriteRule ^add-url/([A-Za-z0-9-_]+)/?$ add_url.php?mode=$1 [NC,L]
+RewriteRule ^add-url/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_url.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-url/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_url.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-report/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_report.php?mode=$1&id=$2 [NC,L]
+
+## Vendor ##
+RewriteRule ^manage-vendor/?$ manage_vendor.php [NC,L]
+RewriteRule ^add-vendor/([A-Za-z0-9-_]+)/?$ add_vendor.php?mode=$1 [NC,L]
+RewriteRule ^add-vendor/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_vendor.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-vendor/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_vendor.php?mode=$1&id=$2 [NC,L]
+
+## Vendor Team ##
+RewriteRule ^manage-vendor-team/?$ manage_vendor_team.php [NC,L]
+RewriteRule ^add-vendor-team/([A-Za-z0-9-_]+)/?$ add_vendor_team.php?mode=$1 [NC,L]
+RewriteRule ^add-vendor-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_vendor_team.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-vendor-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_vendor_team.php?mode=$1&id=$2 [NC,L]
+
+## SEO ##
+RewriteRule ^manage-seo/?$ manage_seo.php [NC,L]
+RewriteRule ^add-seo/([A-Za-z0-9-_]+)/?$ add_seo.php?mode=$1 [NC,L]
+RewriteRule ^add-seo/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_seo.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-seo/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_seo.php?mode=$1&id=$2 [NC,L]
+
+## SEO Team ##
+RewriteRule ^manage-seo-team/?$ manage_seo_team.php [NC,L]
+RewriteRule ^add-seo-team/([A-Za-z0-9-_]+)/?$ add_seo_team.php?mode=$1 [NC,L]
+RewriteRule ^add-seo-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_seo_team.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-seo-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_seo_team.php?mode=$1&id=$2 [NC,L]
+
+## CONTENT ##
+RewriteRule ^manage-content/?$ manage_content.php [NC,L]
+RewriteRule ^add-content/([A-Za-z0-9-_]+)/?$ add_content.php?mode=$1 [NC,L]
+RewriteRule ^add-content/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_content.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-content/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_content.php?mode=$1&id=$2 [NC,L]
+
+## CONTENT Team ##
+RewriteRule ^manage-content-team/?$ manage_content_team.php [NC,L]
+RewriteRule ^add-content-team/([A-Za-z0-9-_]+)/?$ add_content_team.php?mode=$1 [NC,L]
+RewriteRule ^add-content-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_content_team.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-content-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_content_team.php?mode=$1&id=$2 [NC,L]
+
+## CATEGORY ##
+RewriteRule ^manage-category/?$ manage_category.php [NC,L]
+RewriteRule ^add-category/([A-Za-z0-9-_]+)/?$ add_category.php?mode=$1 [NC,L]
+RewriteRule ^add-category/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_category.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-category/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_category.php?mode=$1&id=$2 [NC,L]
+
+## CLIENT_URL ##
+RewriteRule ^manage-client-url/?$ manage_client_url.php [NC,L]
+RewriteRule ^add-client-url/([A-Za-z0-9-_]+)/?$ add_client_url.php?mode=$1 [NC,L]
+RewriteRule ^add-client-url/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_client_url.php?mode=$1&id=$2 [NC,L]
+
+## BLACK_LIST ##
+RewriteRule ^manage-black-list/?$ manage_black_list.php [NC,L]
+RewriteRule ^add-black-list/([A-Za-z0-9-_]+)/?$ add_black_list.php?mode=$1 [NC,L]
+RewriteRule ^add-black-list/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_black_list.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-black-list/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_black_list.php?mode=$1&id=$2 [NC,L]
+
+## VENDOR_URL ##
+RewriteRule ^manage-vendor-url/?$ manage_vendor_url.php [NC,L]
+RewriteRule ^add-vendor-url/([A-Za-z0-9-_]+)/?$ add_vendor_url.php?mode=$1 [NC,L]
+RewriteRule ^add-vendor-url/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_vendor_url.php?mode=$1&id=$2 [NC,L]
+
+## VENDOR_URL_LINK ##
+RewriteRule ^manage-vendor-url-link/([A-Za-z0-9-_]+)/?$ manage_vendor_url_link.php?id=$1 [NC,L]
+RewriteRule ^add-vendor-url-link/([A-Za-z0-9-_]+)/?$ add_vendor_url_link.php?mode=$1 [NC,L]
+RewriteRule ^add-vendor-url-link/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_vendor_url_link.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^assign-url-vendor-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ assign_url_vendor_team.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^vendor-live-link/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ vendor_live_link.php?mode=$1&id=$2 [NC,L]
+
+## CLIENT_URL_LINK ##
+RewriteRule ^manage-client-url-link/([A-Za-z0-9-_]+)/?$ manage_client_url_link.php?id=$1 [NC,L]
+RewriteRule ^add-client-url-link/([A-Za-z0-9-_]+)/?$ add_client_url_link.php?mode=$1 [NC,L]
+RewriteRule ^add-client-url-link/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_client_url_link.php?mode=$1&id=$2 [NC,L]
+
+## VENDOR_URL ##
+RewriteRule ^manage-vendor-team-url/?$ manage_vendor_team_url.php [NC,L]
+RewriteRule ^add-vendor-team-url/([A-Za-z0-9-_]+)/?$ add_vendor_team_url.php?mode=$1 [NC,L]
+RewriteRule ^add-vendor-team-url/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_vendor_team_url.php?mode=$1&id=$2 [NC,L]
+
+## VENDOR_URL_LINK ##
+RewriteRule ^manage-vendor-team-url-link/([A-Za-z0-9-_]+)/?$ manage_vendor_team_url_link.php?id=$1 [NC,L]
+RewriteRule ^add-vendor-team-url-link/([A-Za-z0-9-_]+)/?$ add_vendor_team_url_link.php?mode=$1 [NC,L]
+RewriteRule ^add-vendor-team-url-link/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_vendor_team_url_link.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^view-url-link/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ view_url_link.php?mode=$1&id=$2 [NC,L]
+
+## SEO_URL ##
+RewriteRule ^manage-seo-url/?$ manage_seo_url.php [NC,L]
+RewriteRule ^add-seo-url/([A-Za-z0-9-_]+)/?$ add_seo_url.php?mode=$1 [NC,L]
+RewriteRule ^add-seo-url/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_seo_url.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^assign-url-seo-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ assign_url_seo_team.php?mode=$1&id=$2 [NC,L]
+
+## SEO_URL_LINK ##
+RewriteRule ^manage-seo-url-link/([A-Za-z0-9-_]+)/?$ manage_seo_url_link.php?id=$1 [NC,L]
+RewriteRule ^add-seo-url-link/([A-Za-z0-9-_]+)/?$ add_seo_url_link.php?mode=$1 [NC,L]
+RewriteRule ^add-seo-url-link/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_seo_url_link.php?mode=$1&id=$2 [NC,L]
+
+## SEO_URL ##
+RewriteRule ^manage-seo-team-url/?$ manage_seo_team_url.php [NC,L]
+RewriteRule ^add-seo-team-url/([A-Za-z0-9-_]+)/?$ add_seo_team_url.php?mode=$1 [NC,L]
+RewriteRule ^add-seo-team-url/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_seo_team_url.php?mode=$1&id=$2 [NC,L]
+
+## SEO_TEAM_URL_LINK ##
+RewriteRule ^manage-seo-team-url-link/([A-Za-z0-9-_]+)/?$ manage_seo_team_url_link.php?id=$1 [NC,L]
+RewriteRule ^add-seo-team-url-link/([A-Za-z0-9-_]+)/?$ add_seo_team_url_link.php?mode=$1 [NC,L]
+RewriteRule ^add-seo-team-url-link/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_seo_team_url_link.php?mode=$1&id=$2 [NC,L]
+
+## VENDOR_CONTENT ##
+RewriteRule ^manage-vendor-content/([A-Za-z0-9-_]+)/?$ manage_vendor_content.php?id=$1 [NC,L]
+RewriteRule ^add-vendor-content/([A-Za-z0-9-_]+)/?$ add_vendor_content.php?mode=$1 [NC,L]
+RewriteRule ^add-content/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ add_content.php?mode=$1&id=$2 [NC,L]
+
+## VENDOR_TEAM_CONTENT ##
+RewriteRule ^manage-vendor-team-content/([A-Za-z0-9-_]+)/?$ manage_vendor_team_content.php?id=$1 [NC,L]
+RewriteRule ^add-vendor-team-content/([A-Za-z0-9-_]+)/?$ add_vendor_team_content.php?mode=$1 [NC,L]
+
+## CLIENT_CONTENT ##
+RewriteRule ^manage-client-content/([A-Za-z0-9-_]+)/?$ manage_client_content.php?id=$1 [NC,L]
+RewriteRule ^add-client-content/([A-Za-z0-9-_]+)/?$ add_client_content.php?mode=$1 [NC,L]
+RewriteRule ^approve-content/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ approve_content.php?mode=$1&id=$2 [NC,L]
+
+## HEAD_CONTENT_LINK ##
+RewriteRule ^manage-head-content/?$ manage_head_content.php [NC,L]
+RewriteRule ^approve-head-content/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ approve_head_content.php?mode=$1&id=$2 [NC,L]
+RewriteRule ^assign-link-content-team/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ assign_link_content_team.php?mode=$1&id=$2 [NC,L]
+
+## TEAM_CONTENT ##
+RewriteRule ^manage-team-content/?$ manage_team_content.php [NC,L]
+RewriteRule ^approve-team-content/([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ approve_team_content.php?mode=$1&id=$2 [NC,L]
